@@ -15,6 +15,19 @@ WAF Testing provides a set of tools to verify that your Web Application Firewall
 - **Human-Readable Reports**: Generates clear Markdown reports with actionable recommendations
 - **CI/CD Integration**: Pre-configured GitHub Actions workflow for automated testing
 
+## Improvements in this version
+
+- ✅ Added detection for CloudFront/WAF edge blocks using headers and response body content.
+- ✅ Differentiated block origin in output: `Blocked (Edge)` vs `Blocked (App)`.
+- ✅ Fixed false positives where CloudFront returned HTTP 200 with block content.
+- ✅ Added CSRF test: unauthenticated POST request check.
+- ✅ Added error handling/info leak test with malformed input.
+- ✅ Added URL hex-encoded variants of existing payloads to test WAF bypass.
+- ✅ Labeled new test categories (e.g., `XSS (hex)`, `SQL Injection (hex)`).
+- ✅ Restored usage/help message when no parameters are provided.
+- ✅ Preserved original scoring, result table, and markdown report functionality.
+- ✅ Modularized new logic to cleanly extend existing test loop.
+
 ## Using This Template
 
 This repository is configured as a GitHub template, making it easy to get started:
